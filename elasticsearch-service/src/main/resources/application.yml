@@ -1,0 +1,24 @@
+server:
+  port: 9500
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin2018*
+  application:
+    name: elasticsearch-service
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+
+elasticsearch:
+  ip: 39.107.85.146
+  port: 9300
+  xpack:
+    security:
+      user: elastic:HdY1927*
