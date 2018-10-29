@@ -21,6 +21,7 @@
     <modules>
         <module>eureka-service</module>
         <module>elasticsearch-service</module>
+        <module>storage-service</module>
     </modules>
 
     <properties>
