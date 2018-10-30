@@ -1,11 +1,18 @@
 package com.dy.storageservice.controllers;
 
-import javax.persistence.Entity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author: huangdeyao
  * @create: 2018-10-29 15:19
  **/
-@Entity
+@RestController
+@RequestMapping("/api")
 public class ArticleController {
+
+    @RequestMapping("/hello")
+    public String getTest() {
+        return "success";
+    }
 }

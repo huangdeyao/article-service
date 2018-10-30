@@ -32,8 +32,13 @@ public class Article {
     /**
      * 文章内容
      */
-    @Column(columnDefinition = "varchar(500000)")
+    @Lob
+    @Column(columnDefinition = "text")
     private String content;
+    /**
+     * 点赞
+     */
+    private int likes;
 
     public int getId() {
         return id;
@@ -81,5 +86,13 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 }
