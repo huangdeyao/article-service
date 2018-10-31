@@ -13,11 +13,10 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
-
   datasource:
-    url: jdbc:mysql://localhost:3306/article?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: root
-    password: hybris
+    url: jdbc:mysql://118.24.147.11:3306/article?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: huangdeyao
+    password: HdY_1927*
     driver-class-name: com.mysql.jdbc.Driver
 eureka:
   instance:
