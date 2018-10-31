@@ -2,6 +2,9 @@ package com.dy.storageservice.service.article;
 
 import com.dy.storageservice.model.Article;
 
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+
 /**
  * @author: huangdeyao
  * @create: 2018-10-29 16:22
@@ -12,5 +15,7 @@ public interface ArticleService {
      * @param article
      * @return
      */
-    Article addArticle(Article article);
+    Article addArticle(Article article) throws UnsupportedEncodingException;
+
+    List<Article> serrchArticle();
 }

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * @author: huangdeyao
  * @create: 2018-10-29 15:19
@@ -18,8 +20,13 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @RequestMapping("/article/add")
-    public Object addArticle(@RequestBody Article article) {
+    @RequestMapping("/add/article")
+    public Object addArticle(@RequestBody Article article) throws UnsupportedEncodingException {
         return articleService.addArticle(article);
+    }
+
+    @RequestMapping("/get/article")
+    public Object addArticle() {
+        return articleService.serrchArticle();
     }
 }

@@ -33,7 +33,7 @@ public class Article {
      * 文章内容
      */
     @Lob
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String content;
     /**
      * 点赞
