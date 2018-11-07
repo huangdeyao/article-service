@@ -1,6 +1,12 @@
 package com.dy.storageservice.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * 文章表
@@ -9,6 +15,7 @@ import javax.persistence.*;
  **/
 @Entity
 @Table(name = "article")
+@EntityListeners(AuditingEntityListener.class)
 public class Article {
     @Id
     @GeneratedValue
@@ -39,6 +46,19 @@ public class Article {
      * 点赞
      */
     private int likes;
+
+    /**
+     * 创建时间
+     */
+    @CreatedDate
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createDate;
+    /**
+     * 修改时间
+     */
+    @LastModifiedDate
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date lastmodifiedTime;
 
     public int getId() {
         return id;
