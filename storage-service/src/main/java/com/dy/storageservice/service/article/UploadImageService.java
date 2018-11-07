@@ -1,6 +1,6 @@
 package com.dy.storageservice.service.article;
 
-import com.dy.storageservice.model.AritcleImage;
+import com.dy.storageservice.model.ArticleImage;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -14,5 +14,5 @@ public interface UploadImageService {
      * @param file 文件
      * @return
      */
-    AritcleImage Upload(MultipartFile file, String type);
+    ArticleImage Upload(MultipartFile file, String type);
 }

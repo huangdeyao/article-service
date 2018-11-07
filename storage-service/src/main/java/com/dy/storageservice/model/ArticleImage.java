@@ -15,7 +15,7 @@ import java.util.Date;
 @Entity
 @Table
 @EntityListeners(AuditingEntityListener.class)
-public class AritcleImage {
+public class ArticleImage {
 
     @Id
     @GeneratedValue

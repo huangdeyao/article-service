@@ -1,7 +1,7 @@
 package com.dy.storageservice.controllers;
 
 import com.dy.storageservice.controllers.base.BaseController;
-import com.dy.storageservice.model.AritcleImage;
+import com.dy.storageservice.model.ArticleImage;
 import com.dy.storageservice.result.RespCode;
 import com.dy.storageservice.result.RespEntity;
 import com.dy.storageservice.service.article.UploadImageService;
@@ -33,9 +33,9 @@ public class UploadController extends BaseController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/poster/upload")
+    @RequestMapping("/image/upload")
     public RespEntity uploadPoster(@RequestParam("file") MultipartFile file, String type) throws Exception {
-        AritcleImage aritcleImage = uploadService.Upload(file, type);
+        ArticleImage aritcleImage = uploadService.Upload(file, type);
         if (StringUtils.isNotBlank(aritcleImage.getImageUrl())) {
             return new RespEntity(RespCode.SUCCESS, aritcleImage);
         } else {

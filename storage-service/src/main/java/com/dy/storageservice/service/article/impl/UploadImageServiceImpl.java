@@ -1,6 +1,7 @@
 package com.dy.storageservice.service.article.impl;
 
-import com.dy.storageservice.model.AritcleImage;
+import com.dy.storageservice.dao.ArticleImageDao;
+import com.dy.storageservice.model.ArticleImage;
 import com.dy.storageservice.service.article.UploadImageService;
 import com.dy.storageservice.utils.COSClientUtils;
 import com.qcloud.cos.ClientConfig;
@@ -9,6 +10,7 @@ import com.qcloud.cos.auth.COSCredentials;
 import com.qcloud.cos.region.Region;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,13 +23,16 @@ public class UploadImageServiceImpl implements UploadImageService {
 
     private COSClientUtils cosClientUtils;
     private Logger logger = LoggerFactory.getLogger(getClass());
-    private String secretId;
-    private String secretKey;
-    private String bucket;
-    private String bucketName;
-    
+    private String secretId = "AKIDb2FEBBRf4FBsKanokSv98sNcbKmyCYv3";
+    private String secretKey = "1mHVTBgy3rPhjU0GGzUiw3vYv4yrhT7M";
+    private String bucket = "ap-chengdu";
+    private String bucketName = "huangdeyao-1251741670";
+
+    @Autowired
+    private ArticleImageDao articleImageDao;
+
     @Override
-    public AritcleImage Upload(MultipartFile file, String type) {
+    public ArticleImage Upload(MultipartFile file, String type) {
 
         logger.info("cosClientUtil:" + cosClientUtils);
         /***
@@ -52,8 +57,10 @@ public class UploadImageServiceImpl implements UploadImageService {
         String imgUrl = cosClientUtils.getImgUrl(name);
         String[] split = imgUrl.split("\\?");
         String img = split[0];
+        ArticleImage aritcleImage = new ArticleImage();
+        aritcleImage.setImageUrl(img);
+        aritcleImage.setState(0);
 
-
-        return null;
+        return articleImageDao.save(aritcleImage);
     }
 }
