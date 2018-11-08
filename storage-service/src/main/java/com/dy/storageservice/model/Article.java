@@ -59,6 +59,10 @@ public class Article {
     @LastModifiedDate
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastmodifiedTime;
+    /**
+     * 标签
+     */
+    private String tag;
 
     public int getId() {
         return id;
@@ -114,5 +118,29 @@ public class Article {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getLastmodifiedTime() {
+        return lastmodifiedTime;
+    }
+
+    public void setLastmodifiedTime(Date lastmodifiedTime) {
+        this.lastmodifiedTime = lastmodifiedTime;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

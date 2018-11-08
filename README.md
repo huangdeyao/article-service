@@ -17,9 +17,10 @@
 
 #### 使用说明
 
-1. xxxx
-2. xxxx
-3. xxxx
+java -jar xxx.jar --spring.profiles.active=dev 
+
+windows 乱码问题 要加上-Dfile.encoding=UTF-8
+Java -Dfile.encoding=UTF-8  -jar xxx.jar --spring.profiles.active=dev 
 
 #### 参与贡献
 
