@@ -34,8 +34,8 @@ public class UploadController extends BaseController {
      * @throws Exception
      */
     @RequestMapping("/image/upload")
-    public RespEntity uploadPoster(@RequestParam("file") MultipartFile file, String type) throws Exception {
-        ArticleImage aritcleImage = uploadService.Upload(file, type);
+    public RespEntity uploadPoster(@RequestParam("file") MultipartFile file) throws Exception {
+        ArticleImage aritcleImage = uploadService.Upload(file);
         if (StringUtils.isNotBlank(aritcleImage.getImageUrl())) {
             return new RespEntity(RespCode.SUCCESS, aritcleImage);
         } else {

@@ -32,7 +32,7 @@ public class UploadImageServiceImpl implements UploadImageService {
     private ArticleImageDao articleImageDao;
 
     @Override
-    public ArticleImage Upload(MultipartFile file, String type) {
+    public ArticleImage Upload(MultipartFile file) {
 
         logger.info("cosClientUtil:" + cosClientUtils);
         /***
@@ -48,7 +48,7 @@ public class UploadImageServiceImpl implements UploadImageService {
         String name = null;
         String path = "article" + "/";
         try {
-            name = cosClientUtils.uploadFile(file, path, type);
+            name = cosClientUtils.uploadFile(file, path);
         } catch (Exception e) {
             e.printStackTrace();
             logger.info("文件上传失败");

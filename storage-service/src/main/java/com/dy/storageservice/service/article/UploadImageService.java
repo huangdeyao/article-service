@@ -14,5 +14,5 @@ public interface UploadImageService {
      * @param file 文件
      * @return
      */
-    ArticleImage Upload(MultipartFile file, String type);
+    ArticleImage Upload(MultipartFile file);
 }

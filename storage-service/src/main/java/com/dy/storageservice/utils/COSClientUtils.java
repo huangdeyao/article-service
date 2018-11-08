@@ -7,13 +7,19 @@ import com.qcloud.cos.model.ObjectMetadata;
 import com.qcloud.cos.model.PutObjectResult;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Date;
 
+/**
+ * @author huangdeyao
+ */
 public class COSClientUtils {
 
-    // 存储通名称
+    /**
+     * 存储通名称
+     */
     private String bucketName;
     private COSClient cosClient;
 
@@ -29,41 +35,15 @@ public class COSClientUtils {
         cosClient.shutdown();
     }
 
-    /**
-     * 上传图片
-     *
-     * @param url
-     */
-    public void uploadImg2Cos(String url) throws Exception {
-        File fileOnServer = new File(url);
-        FileInputStream fin;
-        try {
-            fin = new FileInputStream(fileOnServer);
-            String[] split = url.split("/");
-            this.uploadFile2Cos(fin, split[split.length - 1]);
-        } catch (FileNotFoundException e) {
-            throw new Exception("文件上传失败");
-        }
-    }
 
-    public String uploadFile2(MultipartFile file, String path) throws Exception {
+    public String uploadFile(MultipartFile file, String path) throws Exception {
         if (file.getSize() > 50 * 1024 * 1024) {
             throw new Exception("上传文件大小不能超过50M！");
         }
         String originalFilename = file.getOriginalFilename();
+        String[] fileName = originalFilename.split("\\.");
         //命名规则  提交文件名称 + 时间戳
-        String name = path + "/" + originalFilename;
-        return upload(file, name);
-    }
-
-    public String uploadFile(MultipartFile file, String path, String type) throws Exception {
-        if (file.getSize() > 50 * 1024 * 1024) {
-            throw new Exception("上传文件大小不能超过50M！");
-        }
-        String originalFilename = file.getOriginalFilename();
-//        String[] fileName = originalFilename.split("\\.");
-        //命名规则  提交文件名称 + 时间戳
-        String name = path + DateTimeUtils.getTimeZZZ() + "." + type;
+        String name = path + DateTimeUtils.getTimeZZZ() + "." + fileName[1];
         return upload(file, name);
     }
 
@@ -93,7 +73,7 @@ public class COSClientUtils {
      * @param key
      * @return
      */
-    public String getUrl(String key) {
+    private String getUrl(String key) {
         // 设置URL过期时间为10年 3600l* 1000*24*365*10
         Date expiration = new Date(System.currentTimeMillis() + 3600L * 1000 * 24 * 365 * 10);
         // 生成URL
@@ -111,7 +91,7 @@ public class COSClientUtils {
      * @param fileName 文件名称 包括后缀名
      * @return 出错返回"" ,唯一MD5数字签名
      */
-    public String uploadFile2Cos(InputStream instream, String fileName) {
+    private String uploadFile2Cos(InputStream instream, String fileName) {
         String ret = "";
         try {
             // 创建上传Object的Metadata
@@ -122,7 +102,6 @@ public class COSClientUtils {
             objectMetadata.setContentType(getcontentType(fileName.substring(fileName.lastIndexOf("."))));
             objectMetadata.setContentDisposition("inline;filename=" + fileName);
             // 上传文件
-//            PutObjectResult putResult = cOSClient.putObject(bucketName,  fileName, instream, objectMetadata);
             PutObjectResult putResult = cosClient.putObject(bucketName, fileName, instream, objectMetadata);
             ret = putResult.getETag();
         } catch (IOException e) {
@@ -145,7 +124,7 @@ public class COSClientUtils {
      * @param filenameExtension 文件后缀
      * @return String
      */
-    public static String getcontentType(String filenameExtension) {
+    private static String getcontentType(String filenameExtension) {
         if (filenameExtension.equalsIgnoreCase("bmp")) {
             return "image/bmp";
         }
