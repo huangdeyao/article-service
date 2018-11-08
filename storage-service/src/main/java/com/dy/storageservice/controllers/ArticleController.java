@@ -1,6 +1,8 @@
 package com.dy.storageservice.controllers;
 
 import com.dy.storageservice.model.Article;
+import com.dy.storageservice.result.RespCode;
+import com.dy.storageservice.result.RespEntity;
 import com.dy.storageservice.service.article.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,12 +23,12 @@ public class ArticleController {
     private ArticleService articleService;
 
     @RequestMapping("/add/article")
-    public Object addArticle(@RequestBody Article article) throws UnsupportedEncodingException {
-        return articleService.addArticle(article);
+    public RespEntity addArticle(@RequestBody Article article) throws UnsupportedEncodingException {
+        return new RespEntity(RespCode.SUCCESS, articleService.addArticle(article));
     }
 
     @RequestMapping("/get/article")
-    public Object addArticle() {
-        return articleService.serrchArticle();
+    public RespEntity addArticle() {
+        return new RespEntity(RespCode.SUCCESS, articleService.serrchArticle());
     }
 }
