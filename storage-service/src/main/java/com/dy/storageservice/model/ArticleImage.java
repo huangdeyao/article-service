@@ -1,6 +1,7 @@
 package com.dy.storageservice.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -16,16 +17,23 @@ import java.util.Date;
 @Table
 @EntityListeners(AuditingEntityListener.class)
 public class ArticleImage {
-
+    /**
+     * 自动生产uuid作为表主键
+     *
+     * @GenericGenerator 注解是hibernate的注解，声明一个主键生成器；
+     * @GeneratedValue 注解的 generator属性指定主键生成器
+     */
     @Id
-    @GeneratedValue
-    private int id;
+    @GenericGenerator(name = "user-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "user-uuid")
+    @Column(name = "id", nullable = false, length = 64)
+    private String id;
     /**
      * 提交图片用户
      */
     private String userName;
     /**
-     *  图片状态 0 初始状态，1 使用状态， 2 删除文章后状态
+     * 图片状态 0 初始状态，1 使用状态， 2 删除文章后状态
      */
     private int state;
     /**
@@ -45,11 +53,11 @@ public class ArticleImage {
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastmodifiedTime;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

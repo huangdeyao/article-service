@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * @create: 2018-10-29 16:20
  **/
 @Repository
-public interface ArticleImageDao extends JpaRepository<ArticleImage, Long> {
+public interface ArticleImageDao extends JpaRepository<ArticleImage, String> {
 }

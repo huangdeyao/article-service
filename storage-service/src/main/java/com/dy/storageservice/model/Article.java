@@ -1,6 +1,7 @@
 package com.dy.storageservice.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -17,9 +18,17 @@ import java.util.Date;
 @Table(name = "article")
 @EntityListeners(AuditingEntityListener.class)
 public class Article {
+    /**
+     * 自动生产uuid作为表主键
+     * @GenericGenerator 注解是hibernate的注解，声明一个主键生成器；
+     *
+     * @GeneratedValue 注解的 generator属性指定主键生成器
+     */
     @Id
-    @GeneratedValue
-    private int id;
+    @GenericGenerator(name = "user-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "user-uuid")
+    @Column(name = "id", nullable = false, length = 64)
+    private String id;
     /**
      * 作者
      */
@@ -35,7 +44,7 @@ public class Article {
     /**
      * 缩略图
      */
-    private String thumbnailUrl;
+    private String imageUrl;
     /**
      * 文章内容
      */
@@ -64,12 +73,20 @@ public class Article {
      */
     private String tag;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getAuthor() {
@@ -97,11 +114,11 @@ public class Article {
     }
 
     public String getThumbnailUrl() {
-        return thumbnailUrl;
+        return imageUrl;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnailUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getContent() {
