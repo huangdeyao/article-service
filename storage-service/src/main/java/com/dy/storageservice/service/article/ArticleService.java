@@ -1,9 +1,10 @@
 package com.dy.storageservice.service.article;
 
 import com.dy.storageservice.model.Article;
+import org.springframework.data.domain.Page;
 
 import java.io.UnsupportedEncodingException;
-import java.util.List;
+import java.util.Optional;
 
 /**
  * @author: huangdeyao
@@ -17,5 +18,7 @@ public interface ArticleService {
      */
     Article addArticle(Article article) throws UnsupportedEncodingException;
 
-    List<Article> serrchArticle();
+    Page<Article> getAllArticle(int pageNo, int pageSize);
+
+    Optional<Article> getArticleDetails(String id);
 }

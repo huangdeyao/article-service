@@ -5,11 +5,14 @@ import com.dy.storageservice.model.Article;
 import com.dy.storageservice.service.article.ArticleService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
-import java.util.List;
+import java.util.Optional;
 
 /**
  * @author: huangdeyao
@@ -32,7 +35,13 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> serrchArticle() {
-        return articleDao.findAll();
+    public Page<Article> getAllArticle(int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        return articleDao.findAll(pageable);
+    }
+
+    @Override
+    public Optional<Article> getArticleDetails(String id) {
+        return articleDao.findById(id);
     }
 }
