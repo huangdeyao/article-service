@@ -2,6 +2,7 @@ package com.dy.storageservice;
 
 import com.dy.storageservice.model.Article;
 import com.dy.storageservice.service.article.ArticleService;
+import com.dy.storageservice.utils.FilterStringTypeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -28,12 +29,14 @@ public class StorageServiceApplicationTests {
         Optional<Article> article = articleService.getArticleDetails("2c9169fe66f3618c0166f4629f060009");
         Document doc = Jsoup.parse(article.get().getContent());
         System.out.println(doc.childNodeSize());
-        Elements threm=doc.getElementsByTag("p");
-        for (Element elements:threm){
+        Elements threm = doc.getElementsByTag("p");
+        for (Element elements : threm) {
             Elements thrum = elements.getAllElements();
-            //输出单元格中的内容
-            for (Element str : thrum) {
-                System.out.println(str.text());
+
+            if (FilterStringTypeUtils.checkCheseLength(thrum.toString())) {
+                System.out.println("========================================");
+                System.out.println("thrum.toString() = " + thrum.toString());
+                System.out.println("========================================");
             }
         }
 
