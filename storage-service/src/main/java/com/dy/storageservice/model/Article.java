@@ -72,6 +72,10 @@ public class Article {
      * 标签
      */
     private String tag;
+    /**
+     * 描述
+     */
+    private String describe;
 
     public String getId() {
         return id;
@@ -159,5 +163,13 @@ public class Article {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }
