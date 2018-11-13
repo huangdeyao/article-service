@@ -75,7 +75,7 @@ public class Article {
     /**
      * 描述
      */
-    private String describe;
+    private String des;
 
     public String getId() {
         return id;
@@ -165,11 +165,11 @@ public class Article {
         this.tag = tag;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDes() {
+        return des;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDes(String des) {
+        this.des = des;
     }
 }

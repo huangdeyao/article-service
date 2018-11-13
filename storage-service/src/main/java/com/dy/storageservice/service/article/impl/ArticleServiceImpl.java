@@ -43,7 +43,7 @@ public class ArticleServiceImpl implements ArticleService {
                 Elements thrum = elements.getAllElements();
                 if (FilterStringTypeUtils.checkCheseLength(thrum.toString())) {
                     System.out.println("thrum.toString() = " + thrum.toString());
-                    article.setDescribe(thrum.toString());
+                    article.setDes(thrum.toString());
                     break;
                 }
             }
