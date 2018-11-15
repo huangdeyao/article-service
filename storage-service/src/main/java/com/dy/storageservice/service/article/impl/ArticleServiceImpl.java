@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
@@ -54,7 +55,8 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Page<Article> getAllArticle(int pageNo, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        Sort sort = new Sort(Sort.Direction.DESC,"createDate");
+        Pageable pageable = PageRequest.of(pageNo, pageSize,sort);
         return articleDao.findAll(pageable);
     }
 
