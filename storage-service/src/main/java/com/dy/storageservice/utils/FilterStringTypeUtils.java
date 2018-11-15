@@ -35,7 +35,8 @@ public class FilterStringTypeUtils {
         // 用于返回结果
         String result = str;
         boolean flag = isContainChinese(str);
-        if (flag) {// 包含中文
+        if (flag) {
+            // 包含中文
             // 用于拼接过滤中文后的字符
             StringBuffer sb = new StringBuffer();
             // 用于校验是否为中文
@@ -49,7 +50,8 @@ public class FilterStringTypeUtils {
             for (int i = 0; i < charArray.length; i++) {
                 chinese = charArray[i];
                 flag2 = isChinese(chinese);
-                if (!flag2) {// 不是中日韩文字及标点符号
+                if (!flag2) {
+                    // 不是中日韩文字及标点符号
                     sb.append(chinese);
                 }
             }
@@ -177,4 +179,28 @@ public class FilterStringTypeUtils {
         }
         return res;
     }
+
+    /**
+     *
+     * 1、至少匹配一个汉字的写法。
+     * 2、这两个unicode值正好是Unicode表中的汉字的头和尾。
+     * 3、"[]"代表里边的值出现一个就可以，后边的“+”代表至少出现1次，合起来即至少匹配一个汉字。
+     * @param paramValue
+     * @return
+     */
+    public static String getChinese(String paramValue) {
+        String regex = "([\u4E00-\u9FA5]|[\uFE30-\uFFA0])+";
+        String str = "";
+        Matcher matcher = Pattern.compile(regex).matcher(paramValue);
+        while (matcher.find()) {
+            str += matcher.group(0);
+        }
+        return str;
+    }
+
+    public static void main(String[] args) {
+        String paramValue="你好啊,1233333,不好啊";
+        System.out.println(getChinese(paramValue));
+    }
+
 }

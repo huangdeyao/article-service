@@ -75,6 +75,8 @@ public class Article {
     /**
      * 描述
      */
+    @Lob
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String des;
 
     public String getId() {
