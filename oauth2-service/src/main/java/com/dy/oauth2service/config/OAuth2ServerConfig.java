@@ -8,13 +8,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 
-/**
- * @author huangdeyao
- */
 @Configuration
 public class OAuth2ServerConfig{
 
-    private static final String DEMO_RESOURCE_ID = "artilce";
+    private static final String DEMO_RESOURCE_ID = "article";
 
     @Configuration
     @EnableResourceServer
