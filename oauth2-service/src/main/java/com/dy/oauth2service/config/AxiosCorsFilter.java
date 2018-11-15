@@ -7,6 +7,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+/**
+ * @author huangdeyao
+ */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class AxiosCorsFilter extends CorsFilter {
