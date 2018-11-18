@@ -18,10 +18,15 @@ spring:
     username: huangdeyao
     password: HdY_1927*
     driver-class-name: com.mysql.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 10mb
+      max-request-size: 20mb
 eureka:
   instance:
     hostname: eureka.yrclubs.com
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
+
 
