@@ -20,7 +20,7 @@
 java -jar xxx.jar --spring.profiles.active=dev 
 
 windows 乱码问题 要加上-Dfile.encoding=UTF-8
-Java -Dfile.encoding=UTF-8  -jar xxx.jar --spring.profiles.active=dev 
+Java -Dfile.encoding=UTF-8  -jar xxx.jar --spring.profiles.active=dev >/log/app.log &
 
 #### 参与贡献
 
