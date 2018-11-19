@@ -7,6 +7,10 @@ spring:
     user:
       name: admin
       password: admin2018*
+  servlet:
+    multipart:
+      max-file-size: 10mb
+      max-request-size: 20mb
   jpa:
     database: mysql
     show-sql: true
