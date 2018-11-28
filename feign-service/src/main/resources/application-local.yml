@@ -1,0 +1,20 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: feign-service
+  security:
+    user:
+      name: admin
+      password: admin2018*
+eureka:
+  instance:
+    hostname: eureka.yrclubs.com
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    connection-timeout: 5000
