@@ -12,7 +12,7 @@ eureka:
     hostname: eureka.yrclubs.com
   client:
     serviceUrl:
-        defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
 zuul:
   routes:
     storage:
