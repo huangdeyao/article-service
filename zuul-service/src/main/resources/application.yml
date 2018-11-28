@@ -1,0 +1,24 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: zuul-service
+  security:
+    user:
+      name: admin
+      password: admin2018*
+eureka:
+  instance:
+    hostname: eureka.yrclubs.com
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
+zuul:
+  routes:
+    storage:
+      path: /storage/**
+      serviceId: storage-service
+
+
+
+

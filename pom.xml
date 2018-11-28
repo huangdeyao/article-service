@@ -23,6 +23,8 @@
         <module>elasticsearch-service</module>
         <module>storage-service</module>
         <module>oauth2-service</module>
+        <module>zuul-service</module>
+        <module>feign-service</module>
     </modules>
 
     <properties>
