@@ -24,8 +24,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 eureka:
   instance:
-    hostname: localhost
+    hostname: 47.94.144.123:8761
+    instance-id: 47.94.144.123:${server.port}
+    prefer-ip-address: true
   client:
     serviceUrl:
-        defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+        defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
 

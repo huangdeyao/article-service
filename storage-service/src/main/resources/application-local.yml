@@ -24,7 +24,9 @@ spring:
       max-request-size: 20mb
 eureka:
   instance:
-    hostname: eureka.yrclubs.com
+    hostname: 10.1.9.37:8761
+    instance-id: 10.1.9.37:${server.port}
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/

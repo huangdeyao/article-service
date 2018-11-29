@@ -9,7 +9,9 @@ spring:
       password: admin2018*
 eureka:
   instance:
-    hostname: eureka.yrclubs.com
+    hostname: 10.1.9.37:8761
+    instance-id: 10.1.9.37:${server.port}
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
@@ -17,4 +19,4 @@ zuul:
   routes:
     storage:
       path: /storage/**
-      url: http://47.94.144.123:8770
+      serviceId: storage-service

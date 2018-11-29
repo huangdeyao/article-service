@@ -1,18 +1,3 @@
-server:
-  port: 8761
-eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: true
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
 spring:
-  application:
-    name: eurka-server
-  security:
-    user:
-      name: admin
-      password: admin2018*
+  profiles:
+    active: local

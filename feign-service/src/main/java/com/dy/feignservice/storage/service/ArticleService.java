@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author: huangdeyao
  * @create: 2018-11-28 16:03
  **/
-@FeignClient(name = "storage-service", fallback = ArticleServiceFeignFallbackImpl.class)
+@FeignClient(name = "storage-service", url = "http://47.94.144.123:8770", fallback = ArticleServiceFeignFallbackImpl.class)
 public interface ArticleService {
 
     /**
