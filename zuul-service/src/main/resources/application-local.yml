@@ -17,4 +17,4 @@ zuul:
   routes:
     storage:
       path: /storage/**
-      serviceId: storage-service
+      url: http://47.94.144.123:8770
