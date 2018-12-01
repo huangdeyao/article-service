@@ -24,8 +24,8 @@ spring:
       max-request-size: 20mb
 eureka:
   instance:
-    hostname: localhost:8761
-    instance-id: localhost:${server.port}
+    hostname: eureka.yrclubs.com
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   client:
     serviceUrl:
