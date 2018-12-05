@@ -21,4 +21,25 @@ public class TagsController extends BaseController {
         logger.info("************************************");
         return articleService.getArticleTags();
     }
+
+    @RequestMapping(value = "/api/get/hello")
+    public String getOauth() {
+        return "feign get";
+    }
+
+    @RequestMapping(value = "/api/update/hello")
+    public String updateOauth() {
+        return "feign update";
+    }
+
+
+    @RequestMapping(value = "/api/add/hello")
+    public String addOauth() {
+        return "feign add";
+    }
+
+    @RequestMapping(value = "/api/delete/hello")
+    public String deleteOauth() {
+        return "feign delete";
+    }
 }

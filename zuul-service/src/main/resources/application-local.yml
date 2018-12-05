@@ -20,3 +20,18 @@ zuul:
     storage:
       path: /storage/**
       serviceId: storage-service
+    oauth2:
+       path: /oauth2/**
+       sensitiveHeaders:
+       strip-prefix: true
+       serviceId: oauth2-service
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8766/oauth2/oauth/token
+      user-authorization-uri: http://localhost:8766/oauth2/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8766/oauth2/user
+      prefer-token-info: false
+
+

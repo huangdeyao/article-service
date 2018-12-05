@@ -1,8 +1,6 @@
 package com.dy.oauth2service.config;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,10 +39,6 @@ public class OAuth2ServerConfig {
         public void configure(HttpSecurity http) throws Exception {
             http.exceptionHandling()
                     .authenticationEntryPoint(customAuthenticationEntryPoint)
-                    .and()
-                    .logout()
-                    .logoutUrl("/oauth/logout")
-                    .logoutSuccessHandler(customLogoutSuccessHandler())
                     .and()
                     .authorizeRequests()
                     .antMatchers("/api/get/**").permitAll()
