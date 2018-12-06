@@ -9,7 +9,7 @@ spring:
       password: admin2018*
 eureka:
   instance:
-    hostname: localhost:8761
+    hostname: eureka.yrclubs.com
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   client:
@@ -20,8 +20,34 @@ zuul:
     storage:
       path: /storage/**
       serviceId: storage-service
-#zuul:
-#  routes:
-#    storage:
-#      path: /storage/**
-#      url: http://47.94.144.123:8770
+      sensitiveHeaders:
+    oauth:
+      path: /sso/**
+      serviceId: oauth2-service
+      sensitiveHeaders:
+    feign:
+      path: /feign/**
+      serviceId: feign-service
+  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+
+security:
+  oauth2:
+    client:
+      access-token-uri: http://article.yrclubs.com/sso/oauth/token
+      user-authorization-uri: http://article.yrclubs.com/sso/oauth/authorize
+      grant-type: article-client
+      client-secret: article-secret
+      client-id: article-client
+    resource:
+      user-info-uri: http://article.yrclubs.com/sso/user
+      prefer-token-info: false
+hystrix:
+  metrics:
+    enabled: true
+    polling-interval-ms: 100000
+ribbon:
+  eureka:
+    enabled: true

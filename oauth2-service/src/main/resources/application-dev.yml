@@ -7,8 +7,6 @@ spring:
     user:
       name: admin
       password: admin2018*
-    filter:
-      order: 3
   jpa:
     database: mysql
     show-sql: true

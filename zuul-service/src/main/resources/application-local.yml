@@ -20,18 +20,35 @@ zuul:
     storage:
       path: /storage/**
       serviceId: storage-service
-    oauth2:
-       path: /oauth2/**
-       sensitiveHeaders:
-       strip-prefix: true
-       serviceId: oauth2-service
+      sensitiveHeaders:
+    oauth:
+      path: /sso/**
+      serviceId: oauth2-service
+      sensitiveHeaders:
+    feign:
+      path: /feign/**
+      serviceId: feign-service
+  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:8766/oauth2/oauth/token
-      user-authorization-uri: http://localhost:8766/oauth2/oauth/authorize
+      access-token-uri: http://article.yrclubs.com/sso/oauth/token
+      user-authorization-uri: http://article.yrclubs.com/sso/oauth/authorize
+      grant-type: article-client
+      client-secret: article-secret
+      client-id: article-client
     resource:
-      user-info-uri: http://localhost:8766/oauth2/user
+      user-info-uri: http://article.yrclubs.com/sso/user
       prefer-token-info: false
+hystrix:
+  metrics:
+    enabled: true
+    polling-interval-ms: 100000
+ribbon:
+  eureka:
+    enabled: true
 
 
