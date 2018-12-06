@@ -17,10 +17,6 @@ eureka:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
 security:
   oauth2:
-    client:
-      access-token-uri: http://localhost:8766/sso/oauth/token
-      user-authorization-uri: http://localhost:8766/sso/oauth/authorize
     resource:
       user-info-uri: http://localhost:8766/sso/user
       prefer-token-info: false
-      id: feign-service

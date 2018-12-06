@@ -25,14 +25,14 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     TokenStore tokenStore;
 
-    private static final String CLIEN_ID = "devglan-client";
-    private static final String CLIENT_SECRET = "devglan-secret";
+    private static final String CLIEN_ID = "article-client";
+    private static final String CLIENT_SECRET = "article-secret";
     private static final String GRANT_TYPE_PASSWORD = "password";
     private static final String AUTHORIZATION_CODE = "oauth2";
     private static final String REFRESH_TOKEN = "refresh_token";
     private static final String SCOPE_SELECT = "select";
-    private static final int ACCESS_TOKEN_VALIDITY_SECONDS = 12*60*60;
-    private static final int FREFRESH_TOKEN_VALIDITY_SECONDS = 30*60*60;
+    private static final int ACCESS_TOKEN_VALIDITY_SECONDS = 12 * 60 * 60;
+    private static final int FREFRESH_TOKEN_VALIDITY_SECONDS = 30 * 60 * 60;
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -54,7 +54,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         endpoints
                 .tokenStore(tokenStore)
                 .authenticationManager(authenticationManager)
-                .allowedTokenEndpointRequestMethods(HttpMethod.OPTIONS,HttpMethod.GET, HttpMethod.POST);
+                .allowedTokenEndpointRequestMethods(HttpMethod.OPTIONS, HttpMethod.GET, HttpMethod.POST);
     }
 
     @Override

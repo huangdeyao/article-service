@@ -7,8 +7,6 @@ spring:
     user:
       name: admin
       password: admin2018*
-    filter:
-      order: 1
 eureka:
   instance:
     hostname: localhost:8761
@@ -31,18 +29,25 @@ zuul:
       path: /feign/**
       serviceId: feign-service
   add-proxy-headers: true
-#security:
-#  oauth2:
-#    client:
-#      access-token-uri: http://localhost:8766/sso/oauth/token
-#      user-authorization-uri: http://localhost:8766/sso/oauth/authorize
-#    resource:
-#      user-info-uri: http://localhost:8766/sso/user
-#      prefer-token-info: false
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8766/sso/oauth/token
+      user-authorization-uri: http://localhost:8766/sso/oauth/authorize
+      grant-type: article-client
+      client-secret: article-secret
+      client-id: article-client
+    resource:
+      user-info-uri: http://localhost:8766/sso/user
+      prefer-token-info: false
 hystrix:
   metrics:
     enabled: true
-    polling-interval-ms: 10000
+    polling-interval-ms: 100000
 ribbon:
   eureka:
     enabled: true
