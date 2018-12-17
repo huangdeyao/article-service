@@ -30,6 +30,13 @@ nohup java -jar storage-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev 
 nohup java -jar zuul-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev >log/zuul.log &
 
 
+nohup java -jar eureka-service-0.0.1-SNAPSHOT.jar --spring.proflies.active=dev >log/eureka.log &
+nohup java -jar oauth2-service-0.0.1-SNAPSHOT.jar --spring.proflies.active=dev >log/oauth2.log &
+nohup java -jar storage-service-0.0.1-SNAPSHOT.jar --spring.proflies.active=dev >log/storage.log &
+nohup java -jar zuul-service-0.0.1-SNAPSHOT.jar --spring.proflies.active=dev >log/zuul.log &
+
+
+
 windows 乱码问题 要加上-Dfile.encoding=UTF-8
 Java -Dfile.encoding=UTF-8  -jar xxx.jar --spring.profiles.active=dev >/log/app.log &
 ```
