@@ -43,12 +43,14 @@ security:
     resource:
       user-info-uri: http://article.yrclubs.com/sso/user
       prefer-token-info: false
-hystrix:
-  metrics:
-    enabled: true
-    polling-interval-ms: 100000
 ribbon:
-  eureka:
-    enabled: true
-
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 
