@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-11-07 17:26
  **/
 @Entity

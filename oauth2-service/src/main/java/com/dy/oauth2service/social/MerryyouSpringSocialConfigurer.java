@@ -5,7 +5,7 @@ import org.springframework.social.security.SpringSocialConfigurer;
 
 /**
  * 继承默认的社交登录配置，加入自定义的后处理逻辑
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 16:46
  */
 public class MerryyouSpringSocialConfigurer  extends SpringSocialConfigurer {

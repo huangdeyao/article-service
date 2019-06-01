@@ -11,7 +11,7 @@ import org.springframework.social.connect.ConnectionFactory;
 import org.springframework.web.servlet.View;
 
 /**
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 13:51
  */
 @Configuration

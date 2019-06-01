@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
- * @author huangdeyao
+ * @author root
  */
 @Configuration
 @EnableAuthorizationServer

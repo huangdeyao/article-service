@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * 文章表
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-10-29 15:30
  **/
 @Entity

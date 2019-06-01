@@ -8,7 +8,7 @@ import org.springframework.social.connect.UserProfile;
 
 /**
  *qq返回的信息为spring social提供的适配器
- * @author huangdeyao
+ * @author root
  */
 public class QQAdapter implements ApiAdapter<QQ> {
 

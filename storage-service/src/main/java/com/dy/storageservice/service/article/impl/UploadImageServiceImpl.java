@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-11-07 17:35
  **/
 @Service
@@ -23,10 +23,10 @@ public class UploadImageServiceImpl implements UploadImageService {
 
     private COSClientUtils cosClientUtils;
     private Logger logger = LoggerFactory.getLogger(getClass());
-    private String secretId = "AKIDb2FEBBRf4FBsKanokSv98sNcbKmyCYv3";
-    private String secretKey = "1mHVTBgy3rPhjU0GGzUiw3vYv4yrhT7M";
-    private String bucket = "ap-chengdu";
-    private String bucketName = "huangdeyao-1251741670";
+    private String secretId = "secretId";
+    private String secretKey = "secretKey";
+    private String bucket = "ap-bucket";
+    private String bucketName = "root-bucket";
 
     @Autowired
     private ArticleImageDao articleImageDao;

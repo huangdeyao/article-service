@@ -4,7 +4,7 @@ import com.dy.storageservice.model.ArticleImage;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-11-07 17:35
  **/
 public interface UploadImageService {

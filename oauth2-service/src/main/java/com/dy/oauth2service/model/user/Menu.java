@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-09-11 12:00
  **/
 @Entity

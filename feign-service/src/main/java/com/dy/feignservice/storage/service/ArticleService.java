@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-11-28 16:03
  **/
 @FeignClient(name = "storage-service", fallback = ArticleServiceFeignFallbackImpl.class)

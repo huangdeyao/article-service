@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-10-29 15:19
  **/
 @RestController

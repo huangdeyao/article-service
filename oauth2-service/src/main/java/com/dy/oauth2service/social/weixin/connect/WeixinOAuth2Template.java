@@ -16,7 +16,7 @@ import java.nio.charset.Charset;
 import java.util.Map;
 
 /**
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 13:46
  */
 public class WeixinOAuth2Template extends OAuth2Template {

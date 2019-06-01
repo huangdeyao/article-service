@@ -10,7 +10,7 @@ import org.springframework.social.oauth2.AccessGrant;
  *  * 所以在这里继承了标准AccessGrant，添加了openId字段，作为对微信access_token信息的封装。
  *  * Created on 2018/1/11.
  * 处理微信返回的access_token类(添加openid)
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 13:41
  */
 @Data

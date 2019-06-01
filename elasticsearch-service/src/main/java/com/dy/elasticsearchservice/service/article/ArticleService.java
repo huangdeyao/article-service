@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-10-20 18:32
  **/
 public interface ArticleService {

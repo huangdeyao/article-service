@@ -3,7 +3,7 @@ package com.dy.oauth2service.social.qq.api;
 import lombok.Data;
 
 /**
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 16:30
  */
 @Data

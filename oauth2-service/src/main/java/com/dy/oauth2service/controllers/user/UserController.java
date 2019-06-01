@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @date: 2018/2/11  12:18
  * @desc: IntelliJ IDEA
  */
@@ -23,7 +23,7 @@ public class UserController {
     @Autowired
     UsersDao usersRepository;
 
-    private static final String TYPE_USER = "2018*_*token";
+    private static final String TYPE_USER = "article";
 
     @PostMapping(value = "/register")
     public String register(@RequestBody Users users) {

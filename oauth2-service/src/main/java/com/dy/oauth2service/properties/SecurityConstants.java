@@ -1,7 +1,7 @@
 package com.dy.oauth2service.properties;
 
 /**
- * @author huangdeyao
+ * @author root
  */
 public interface SecurityConstants {
     /**
@@ -37,32 +37,32 @@ public interface SecurityConstants {
     /**
      * weixin appID
      */
-    String DEFAULT_SOCIAL_WEIXIN_APP_ID = "wxfd6965ab1fc6adb2";
+    String DEFAULT_SOCIAL_WEIXIN_APP_ID = "123";
 
     /**
      * weixin appsECRET
      */
-    String DEFAULT_SOCIAL_WEIXIN_APP_SECRET = "66bb4566de776ac699ec1dbed0cc3dd1";
+    String DEFAULT_SOCIAL_WEIXIN_APP_SECRET = "123";
 
     /**
      * qq appID
      */
-    String DEFAULT_SOCIAL_QQ_APP_ID = "101448999";
+    String DEFAULT_SOCIAL_QQ_APP_ID = "123";
 
     /**
      * qq appsECRET
      */
-    String DEFAULT_SOCIAL_QQ_APP_SECRET = "1d958787a87559bad371c0a9e26eef61";
+    String DEFAULT_SOCIAL_QQ_APP_SECRET = "123";
 
     /**
      * weibo appID
      */
-    String DEFAULT_SOCIAL_WEIBO_APP_ID = "491608476";
+    String DEFAULT_SOCIAL_WEIBO_APP_ID = "123";
 
     /**
      * weibo appsECRET
      */
-    String DEFAULT_SOCIAL_WEIBO_APP_SECRET = "b2dd0d4199ddc9d64e75d9dd6007ca82";
+    String DEFAULT_SOCIAL_WEIBO_APP_SECRET = "321";
 
     /**
      *自定义社交social拦截地址  默认/auth  (SocialAuthenticationFilter)

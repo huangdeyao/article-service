@@ -6,7 +6,7 @@ import lombok.Data;
 
 /**
  *
- * @author huangdeyao
+ * @author root
  */
 @Data
 public class SocialUserInfo {

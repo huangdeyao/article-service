@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * 微信返回的用户信息
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 13:22
  */
 @Data

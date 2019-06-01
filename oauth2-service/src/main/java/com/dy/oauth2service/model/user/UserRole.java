@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @date: 2018/2/11  12:18
  * @desc: IntelliJ IDEA
  */

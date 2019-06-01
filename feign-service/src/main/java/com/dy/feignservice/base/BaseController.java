@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 基类
  *
- * @author huangdeyao
+ * @author root
  * @create 2018-05-31 13:04
  **/
 public class BaseController {

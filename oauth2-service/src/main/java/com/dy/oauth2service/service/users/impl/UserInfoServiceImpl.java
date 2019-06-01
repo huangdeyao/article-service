@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-09-11 11:44
  **/
 @Service

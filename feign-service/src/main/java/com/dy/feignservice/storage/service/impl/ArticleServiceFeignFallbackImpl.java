@@ -4,7 +4,7 @@ import com.dy.feignservice.storage.service.ArticleService;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-11-28 16:10
  **/
 @Component

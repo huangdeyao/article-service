@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 微信卡卷
  *
- * @author huangdeyao
+ * @author root
  * @create 2018-06-18 17:00
  **/
 @RestController

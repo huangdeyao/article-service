@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 
 
 /**
- * @author huangdeyao
+ * @author root
  */
 @Configuration
 @EnableWebSecurity

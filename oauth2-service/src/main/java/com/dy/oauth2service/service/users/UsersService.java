@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 /**
- * @author huangdeyao
+ * @author root
  */
 @Service(value = "usersService")
 public class UsersService implements UserDetailsService {

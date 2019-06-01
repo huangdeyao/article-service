@@ -5,7 +5,7 @@ import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.stereotype.Component;
 
 /**
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 16:45
  */
 @Component

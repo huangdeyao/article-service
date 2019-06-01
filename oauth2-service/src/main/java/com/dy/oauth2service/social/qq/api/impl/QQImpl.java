@@ -11,7 +11,7 @@ import org.springframework.social.oauth2.TokenStrategy;
 
 /**
  * 实现返回用户信息接口
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 16:29
  */
 public class QQImpl extends AbstractOAuth2ApiBinding implements QQ {

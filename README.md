@@ -1,21 +1,40 @@
 # article-service
 
 #### 项目介绍
-{**以下是码云平台说明，您可以替换为您的项目简介**
-码云是开源中国推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+前端使用了react，后端使用springcloud, oauth2做统一认证
+
+eureka
+zuul
+oauth2
+storage
 
 #### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
+springcloud
 
 #### 使用说明
+
+1、依次启动 
+eureka-service
+zuul-service
+oauth2-service
+storage-service
+
+
+>这两个模块测试使用，可以不用
+elasticsearch-service
+feign-service
+
+
+2、导入登录账号导入数据，或者运行oauth2-service 中的Oauth2ServiceApplicationTests，导入登录账号和密码
+
+INSERT INTO `react_article`.`user_info`(`id`, `create_date`, `lastmodified_time`, `password`, `type`, `username`) VALUES (1, '2019-06-01 17:37:22', '2019-06-01 17:37:22', '{bcrypt}$2a$10$B2XUurHGK7TBnuGB8NMIqOiPI33o4lqhRkbJQDQUt8OWkcYxcip4G', NULL, 'user');
+
+3、获取token
+![图片](oauth2-service/src/main/resources/img/21.png)
+![图片](oauth2-service/src/main/resources/img/22.png)
+
+
+部署：
 
 java -jar xxx.jar --spring.profiles.active=dev >/log/app.log &
 
@@ -41,24 +60,3 @@ windows 乱码问题 要加上-Dfile.encoding=UTF-8
 Java -Dfile.encoding=UTF-8  -jar xxx.jar --spring.profiles.active=dev >/log/app.log &
 ```
 
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#mysql 腾讯数据源
-
-
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

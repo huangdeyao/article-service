@@ -6,7 +6,7 @@ import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 
 /**
  * QQServiceProvider连接服务提供商
- * @author huangdeyao
+ * @author root
  */
 public class QQServiceProvider extends AbstractOAuth2ServiceProvider<QQ> {
 

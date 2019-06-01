@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.Date;
 
 /**
- * @author huangdeyao
+ * @author root
  */
 public class COSClientUtils {
 

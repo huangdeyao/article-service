@@ -8,7 +8,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 /**
- * @author huangdeyao
+ * @author root
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)

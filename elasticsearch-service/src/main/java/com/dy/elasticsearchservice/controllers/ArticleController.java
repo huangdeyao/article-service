@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Base64;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-10-20 18:51
  **/
 @RestController

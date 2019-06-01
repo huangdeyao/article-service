@@ -1,7 +1,7 @@
 package com.dy.elasticsearchservice.entities;
 
 /**
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-08-21 18:51
  **/
 public class Article {

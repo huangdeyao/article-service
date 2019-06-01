@@ -3,7 +3,7 @@ package com.dy.feignservice.result;
 /**
  * 响应报文规范
  *
- * @author huangdeyao
+ * @author root
  * @create 2018-05-28 11:01
  **/
 public class RespEntity {

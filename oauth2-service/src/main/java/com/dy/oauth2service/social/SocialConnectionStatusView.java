@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * 访问/connect会获取所有绑定社交的信息(显示是否绑定第三方社交信息)
- * @author huangdeyao
+ * @author root
  * @date 2018/12/18 16:44
  */
 @Component("connect/status")

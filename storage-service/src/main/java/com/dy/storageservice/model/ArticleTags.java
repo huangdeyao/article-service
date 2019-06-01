@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 /**
  * 标签
- * @author: huangdeyao
+ * @author: root
  * @create: 2018-11-19 10:30
  **/
 @Entity
