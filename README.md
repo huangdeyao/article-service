@@ -14,12 +14,14 @@ storage
 springcloud
 
 #### 使用说明
+先配置好自己的数据库信息
 
 1、依次启动 
 eureka-service 
 zuul-service 路由网关
 oauth2-service 认证模块
 storage-service 文章模块
+
 
 
 >这两个模块测试使用，可以不用
@@ -43,7 +45,7 @@ INSERT INTO `react_article`.`article_tags`(`id`, `code`, `tags_name`) VALUES (2,
 5、图片上传 请自行申请腾讯云
 https://cloud.tencent.com/redirect.php?redirect=1042&cps_key=67213a01a6b22c5f17736dd6857e2581&from=console
 
-部署：
+### 部署：
 
 java -jar xxx.jar --spring.profiles.active=dev >/log/app.log &
 
