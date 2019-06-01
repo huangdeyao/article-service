@@ -21,7 +21,7 @@ public class ElasticSearchConfig {
 
     private static final Settings settings = Settings.builder()
             .put("cluster.name", "elasticsearch")
-            .put("xpack.security.user", "elastic:HdY1927*")
+            .put("xpack.security.user", "elastic:123456")
             //增加嗅探机制，找到ES集群 不是集群不能设置，否则会出问题
 //            .put("client.transport.sniff", false)
             //增加线程池个数为1
@@ -32,7 +32,7 @@ public class ElasticSearchConfig {
     public TransportClient client() throws UnknownHostException {
         client = new PreBuiltXPackTransportClient(settings);
         // transportClient = new PreBuiltTransportClient(esSetting);  不适用xpack加密时的用法
-        client.addTransportAddresses(new TransportAddress(InetAddress.getByName("39.107.85.146"), 9300));
+        client.addTransportAddresses(new TransportAddress(InetAddress.getByName("192.168.120.146"), 9300));
         return client;
     }
 }

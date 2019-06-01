@@ -19,4 +19,4 @@ spring:
   security:
     user:
       name: admin
-      password: admin2018*
+      password: 1234554321
