@@ -14,9 +14,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/article?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://47.94.144.123:3306/react_article?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: 123456*
+    password: HdY_1927*
     driver-class-name: com.mysql.jdbc.Driver
   servlet:
     multipart:

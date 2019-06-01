@@ -1,7 +1,9 @@
 # article-service
 
 #### 项目介绍
-前端使用了react，后端使用springcloud, oauth2做统一认证
+前端使用了react，后端使用springcloud, oauth2做统一认证，springboot2.0,图片上传使用腾讯COS
+
+项目比较简单，也有不少坑，仅做学习参考
 
 eureka
 zuul
@@ -14,10 +16,10 @@ springcloud
 #### 使用说明
 
 1、依次启动 
-eureka-service
-zuul-service
-oauth2-service
-storage-service
+eureka-service 
+zuul-service 路由网关
+oauth2-service 认证模块
+storage-service 文章模块
 
 
 >这两个模块测试使用，可以不用
@@ -29,10 +31,17 @@ feign-service
 
 INSERT INTO `react_article`.`user_info`(`id`, `create_date`, `lastmodified_time`, `password`, `type`, `username`) VALUES (1, '2019-06-01 17:37:22', '2019-06-01 17:37:22', '{bcrypt}$2a$10$B2XUurHGK7TBnuGB8NMIqOiPI33o4lqhRkbJQDQUt8OWkcYxcip4G', NULL, 'user');
 
+
 3、获取token
 ![图片](oauth2-service/src/main/resources/img/21.png)
 ![图片](oauth2-service/src/main/resources/img/22.png)
 
+4、表article_tags，导入基础数据
+INSERT INTO `react_article`.`article_tags`(`id`, `code`, `tags_name`) VALUES (1, '1', 'react');
+INSERT INTO `react_article`.`article_tags`(`id`, `code`, `tags_name`) VALUES (2, '2', 'spring');
+
+5、图片上传 请自行申请腾讯云
+https://cloud.tencent.com/redirect.php?redirect=1042&cps_key=67213a01a6b22c5f17736dd6857e2581&from=console
 
 部署：
 
