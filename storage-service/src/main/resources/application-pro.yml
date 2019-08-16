@@ -16,7 +16,7 @@ spring:
   datasource:
     url: jdbc:mysql://47.94.144.123:3306/react_article?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: HdY_1927*
+    password: 1233123*
     driver-class-name: com.mysql.jdbc.Driver
   servlet:
     multipart:
